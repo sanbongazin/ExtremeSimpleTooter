@@ -90,14 +90,14 @@ namespace WindowsFormsApplication1
             }
             if (mode == "公開")
             {
-                client.PostNewStatus(status: TootMessage + UserName + Environment.NewLine + "#" + "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Public);
+                client.PostNewStatus(status: TootMessage +  Environment.NewLine + "#" + UserName+ "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Public);
             }
             else if (mode == "非公開")
             {
-                client.PostNewStatus(status: TootMessage + UserName + Environment.NewLine + "#" +  "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Unlisted);
+                client.PostNewStatus(status: TootMessage + Environment.NewLine + "#" + UserName + "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Unlisted);
             }
             else {
-                client.PostNewStatus(status: TootMessage + UserName + Environment.NewLine + "#" +  "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Private);
+                client.PostNewStatus(status: TootMessage  + Environment.NewLine + "#" + UserName +  "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Private);
             }
 
             Toot_Input.Clear();
