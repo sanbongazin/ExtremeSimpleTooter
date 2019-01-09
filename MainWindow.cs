@@ -66,6 +66,7 @@ namespace WindowsFormsApplication1
                         form2.Visible = false;
                     }
             }
+            this.TopMost = true;
         }
 
 
@@ -84,16 +85,19 @@ namespace WindowsFormsApplication1
 
             UserName = HashTagOption.Text;
             string TootMessage = Toot_Input.Text;
+            if (TootMessage == "") {
+                return;
+            }
             if (mode == "公開")
             {
-                client.PostNewStatus(status: TootMessage + "#" + UserName + "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Public);
+                client.PostNewStatus(status: TootMessage + UserName + Environment.NewLine + "#" + "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Public);
             }
             else if (mode == "非公開")
             {
-                client.PostNewStatus(status: TootMessage + "#" + UserName + "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Unlisted);
+                client.PostNewStatus(status: TootMessage + UserName + Environment.NewLine + "#" +  "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Unlisted);
             }
             else {
-                client.PostNewStatus(status: TootMessage + "#" + UserName + "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Private);
+                client.PostNewStatus(status: TootMessage + UserName + Environment.NewLine + "#" +  "_On_Extreme_Simple_Tooter", visibility: Mastodot.Enums.Visibility.Private);
             }
 
             Toot_Input.Clear();
@@ -131,6 +135,14 @@ namespace WindowsFormsApplication1
             else {
                 Toot_Input.SelectAll();
                 Toot_Input.SelectionFont = new Font("MS UI Gothic", 12);
+            }
+        }
+
+        private void Toot_Input_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && e.Control == true)
+            {
+                OAuth(Toot_Mode.SelectedItem.ToString());
             }
         }
     }

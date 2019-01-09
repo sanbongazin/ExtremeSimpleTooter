@@ -87,6 +87,7 @@
             this.Toot_Input.TabIndex = 12;
             this.Toot_Input.Text = "";
             this.Toot_Input.TextChanged += new System.EventHandler(this.Toot_Input_TextChanged);
+            this.Toot_Input.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Toot_Input_KeyUp);
             // 
             // Toot_Mode
             // 
