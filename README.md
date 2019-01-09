@@ -3,7 +3,7 @@
 ExtremeSimpleTooterは、トゥートだけを極限までにシンプルに、コンパクトにできるようにしたソフトです。
 操作は以下のようにしました。
 
-![Imgur](https://i.imgur.com/3tE2Ca0.png)
+![Imgur](https://i.imgur.com/d71e6Nn.png)
 
 公開範囲を設定することが可能です。
 また、フォントサイズを設定することで、見やすさを変更することができます。
